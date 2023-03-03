@@ -3,7 +3,7 @@ export { startGame }
 import { board, mineCounter } from './elements.js'
 import { placeMines, showMines } from './mines.js'
 import { setCounts } from './count.js'
-import { runSecondCounter } from './timer.js'
+import { runSecondCounter, stopSecondCounter } from './timer.js'
 
 function startGame(mineCount) {
   board.onclick = e => {
@@ -19,6 +19,13 @@ function startGame(mineCount) {
 
       board.onclick = e => {
         if (e.target.matches('td:not(.flag)')) open(e.target)
+
+        if (!board.querySelector('td:not(.open):not([data-mine])')) {
+          board.onclick = null
+          board.oncontextmenu = null
+
+          stopSecondCounter()
+        }
       }
 
       board.oncontextmenu = e => {
