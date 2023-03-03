@@ -6,7 +6,6 @@
 #body>* {
   position: absolute;
   width: 100%;
-  transition: 3s
 }
 
 #body>:not(:has(>:checked)) {

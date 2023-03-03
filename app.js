@@ -1,6 +1,7 @@
 import { limitNumberInputs } from './js/limit-inputs.js'
 import { prepareBoard } from './js/board.js'
 import { newGameForm, customDifficultyRadio } from './js/elements.js'
+import { startGame } from './js/game.js'
 
 limitNumberInputs()
 
@@ -11,6 +12,7 @@ newGameForm.onsubmit = () => {
   const [width, height, mineCount] = difficultyRadio.value.split(/\D/).map(Number)
 
   prepareBoard(width, height)
+  startGame(mineCount)
 }
 
 newGameForm.onchange = e => {
