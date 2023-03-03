@@ -1,0 +1,7 @@
+export const newGameForm = document.querySelector('#new-game-form')
+export const customDifficultyRadio = newGameForm.querySelector('#custom-difficulty-radio')
+export const widthInput = newGameForm.querySelector('#width-input')
+export const heightInput = newGameForm.querySelector('#height-input')
+export const mineCountInput = newGameForm.querySelector('#mine-count-input')
+export const header = document.querySelector('main>header')
+export const board = document.querySelector('#board')

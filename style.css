@@ -1,0 +1,48 @@
+form {
+  padding: 30px 50px;
+}
+
+form th, form td {
+  padding: 15px 10px;
+}
+
+th:nth-child(n+2), td:nth-child(n+2) {
+  text-align: center;
+}
+
+input {
+  padding: 5px 10px;
+  text-align: center;
+  accent-color: red;
+}
+
+form>button {
+  margin: 30px auto;
+  display: block;
+}
+
+form>button>label, main>header>button>label {
+  display: block;
+  padding: 10px 30px;
+}
+
+main {
+  background: #eee;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main>header {
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+output {
+  font-family: Quartz, monospace;
+  font-size: 26px;
+  padding: 6px 12px;
+  color: red;
+  background-color: #000;
+}
