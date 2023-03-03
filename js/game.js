@@ -1,8 +1,9 @@
 export { startGame }
 
-import { board } from './elements.js'
+import { board, mineCounter } from './elements.js'
 import { placeMines, showMines } from './mines.js'
 import { setCounts } from './count.js'
+import { runSecondCounter } from './timer.js'
 
 function startGame(mineCount) {
   board.onclick = e => {
@@ -13,6 +14,7 @@ function startGame(mineCount) {
 
       placeMines(mineCount, row, col)
       setCounts()
+      runSecondCounter()
       open(cell)
 
       board.onclick = e => {
@@ -23,6 +25,10 @@ function startGame(mineCount) {
         if (e.target.matches('td:not(.open)')) {
           e.preventDefault()
           e.target.classList.toggle('flag')
+
+          const flags = board.querySelectorAll('.flag')
+
+          mineCounter.innerText = String(mineCount - flags.length).padStart(3, '0')
         }
       }
     }
@@ -39,6 +45,10 @@ function open(cell) {
   if (cell.dataset.mine) {
     showMines()
     cell.style.backgroundColor = 'red'
+
+    board.onclick = null
+    board.oncontextmenu = null
+
     return
   } 
 

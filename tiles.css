@@ -12,7 +12,7 @@
 }
 
 #board .open[data-mine] {
-  background-image: url("images/mine.png");
+  background-image: url("images/mineA.png");
   background-repeat: no-repeat;
   background-position: 1px 1px;
 }

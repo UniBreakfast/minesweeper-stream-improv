@@ -2,6 +2,7 @@ export { placeMines, showMines }
 
 import { board } from './elements.js'
 import { shuffle } from './utils.js'
+import { mineCounter } from './elements.js'
 
 function placeMines(mineCount, row, col) {
   const boardBody = board.firstElementChild
@@ -12,6 +13,8 @@ function placeMines(mineCount, row, col) {
   const minedCells = shuffle(cells).slice(0, mineCount)
 
   minedCells.forEach(cell => cell.dataset.mine = true)
+
+  mineCounter.innerText = String(mineCount).padStart(3, '0')
 }
 
 function showMines() {
