@@ -1,0 +1,69 @@
+#board td {
+  background-color: #bdbdbd;
+  border: 1px solid #7b7b7b;
+  border-width: 1px 0 0 1px;
+  position: relative;
+}
+
+#board :not(.open) {
+  border: 2px solid #7b7b7b;
+  border-top-color: #fff;
+  border-left-color: #fff;
+}
+
+#board .open[data-mine] {
+  background-image: url("images/mine.png");
+  background-repeat: no-repeat;
+  background-position: 1px 1px;
+}
+
+#board .open[style="background-color: red;"] {
+  background-image: url("images/boom.png");
+}
+
+#board .open[data-count]::after {
+  content: attr(data-count);
+  font-family: "Press Start 2P", monospace;
+  font-size: 12px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+
+#board [data-count="1"]::after {
+  color: blue;
+}
+
+#board [data-count="2"]::after {
+  color: green;
+}
+
+#board [data-count="3"]::after {
+  color: red;
+}
+
+#board [data-count="4"]::after {
+  color: #00007B;
+}
+
+#board [data-count="5"]::after {
+  color: #7B0000;
+}
+
+#board [data-count="6"]::after {
+  color: #007B7B;
+}
+
+#board [data-count="7"]::after {
+  color: #000;
+}
+
+#board [data-count="8"]::after {
+  color: #7B7B7B;
+}
+
+#board .flag {
+  background-image: url("images/flag.png");
+  background-repeat: no-repeat;
+  background-position: 2px 1px;
+}
